@@ -10,7 +10,7 @@ const movies = [
         whatsappNumber: "917253076671",
         normalPrice: 120,
         vipPrice: 290,
-        status: "coming_soon", // Options: "now_showing" or "coming_soon"
+        status: "now_showing", // Options: "now_showing" or "coming_soon"
         likes: 124
     },
     {
@@ -352,3 +352,4 @@ if (heroSection) {
         heroSection.style.background = `url('${heroImages[currentHeroImageIndex]}') center/contain no-repeat #000`;
     }, 2500);
 }
+
