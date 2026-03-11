@@ -9,8 +9,8 @@ const movies = [
         description: "<strong>Director:</strong> Prashant<br><strong>Hero:</strong> Prashant | <strong>Heroine:</strong> Himani<br><strong>Cast:</strong> Sourya, Manish Solanki, Sobha, Gabbar, Khushi, Bhumika & others.<br><strong>Address:</strong> Khurja Cinema, Moon City",
         whatsappNumber: "917617605850",
         silverPrice: 120,
-        goldPrice: 249,
-        diamondPrice: 290,
+        goldPrice: 190,
+        diamondPrice: 249,
         status: "now_showing", // Options: "now_showing" 
         likes: 245
     },
@@ -313,6 +313,7 @@ if (heroSection) {
         heroSection.style.background = `url('${heroImages[currentHeroImageIndex]}') center/contain no-repeat #000`;
     }, 2500);
 }
+
 
 
 
