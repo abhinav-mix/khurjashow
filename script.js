@@ -10,99 +10,34 @@ const movies = [
         whatsappNumber: "918449802289",
         normalPrice: 120,
         vipPrice: 290,
-        status: "now_showing", // Options: "now_showing" or "coming_soon"
-        likes: 124
+        status: "now_showing", // Options: "now_showing" 
+        likes: 245
     },
     {
         id: 2,
-        title: "Galactic Wars",
-        poster: "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop",
+        title: "The Kerala Story 2 Goes Beyond (2026)",
+        poster: "https://catimages.org/images/2026/02/28/The-Kerala-Story-2-Goes-Beyond-2026-HDHub4u.Ms.jpg",
         date: "12 Mar 2026",
-        timings: ["06:30 PM"],
-        description: "An epic space opera following a rebel alliance fighting against a tyrannical galactic empire to restore peace.",
+        timings: ["12:00 PM", "03:30 PM", "07:30 PM"],
+        description: "<strong>Director:</strong> Kamakhya Narayan Singh<br><strong>Cast:</strong> Ulka Gupta, Aditi Bhatia, Aishwarya Ojha<br>The powerful sequel to the 2023 movie, following three young women across different states as they navigate complex emotional and societal challenges. A gripping narrative of resilience and survival.",
         whatsappNumber: "917253076672",
         normalPrice: 150,
         vipPrice: 350,
         status: "coming_soon",
-        likes: 89
+        likes: 245
     },
     {
         id: 3,
-        title: "Haunted Shadows",
-        poster: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?q=80&w=800&auto=format&fit=crop",
+        title: "Honey (2026)",
+        poster: "https://image.tmdb.org/t/p/w500/aiDE86ihhMcoDpcCLCHvuUDm0en.jpg",
         date: "13 Mar 2026",
-        timings: ["05:15 PM"],
-        description: "A family moves into a remote mansion only to discover they are not alone. A chilling and suspenseful horror experience.",
+        timings: ["05:15 PM", "09:30 PM"],
+        description: "<strong>Director:</strong> Karuna Kumar<br><strong>Cast:</strong> Naveen Chandra, Divya Pillai, Divi Vadthya<br>A gripping psychological horror thriller that explores the dark depths of the human mind. When a peaceful life is disrupted by unsettling events, survival becomes a game of psychological warfare.",
         whatsappNumber: "917253076673",
         normalPrice: 100,
         vipPrice: 250,
         status: "coming_soon",
-        likes: 215
-    },
-    {
-        id: 4,
-        title: "Comedy Nights",
-        poster: "https://images.unsplash.com/photo-1585951237318-9ea5e175b891?q=80&w=800&auto=format&fit=crop",
-        date: "13 Mar 2026",
-        timings: ["03:30 PM"],
-        description: "Get ready to laugh out loud in this hilarious comedy featuring a star-studded cast blending humor and heart.",
-        whatsappNumber: "917253076674",
-        normalPrice: 110,
-        vipPrice: 280,
-        status: "coming_soon",
-        likes: 342
-    },
-    {
-        id: 5,
-        title: "The Lost Kingdom",
-        poster: "https://images.unsplash.com/photo-1514539079130-25950c84af65?q=80&w=800&auto=format&fit=crop",
-        date: "14 Mar 2026",
-        timings: ["02:00 PM"],
-        description: "An archaeological expedition uncovers a secret passage leading to a magical mythical world full of beasts and treasures.",
-        whatsappNumber: "917253076675",
-        normalPrice: 130,
-        vipPrice: 300,
-        status: "coming_soon",
-        likes: 156
-    },
-    {
-        id: 6,
-        title: "Neon Cyber City",
-        poster: "https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=800&auto=format&fit=crop",
-        date: "14 Mar 2026",
-        timings: ["08:15 PM"],
-        description: "In a dystopian cyberpunk future, an underground hacker attempts to take down the mega-corporations controlling society.",
-        whatsappNumber: "917253076676",
-        normalPrice: 160,
-        vipPrice: 400,
-        status: "coming_soon",
-        likes: 412
-    },
-    {
-        id: 7,
-        title: "Love in Paris",
-        poster: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800&auto=format&fit=crop",
-        date: "25 Apr 2026",
-        timings: ["TBA"],
-        description: "Two strangers visiting the city of lights accidentally bump into each other and fall into a whirlwind romantic adventure.",
-        whatsappNumber: "917253076677",
-        normalPrice: 120,
-        vipPrice: 270,
-        status: "coming_soon",
-        likes: 72
-    },
-    {
-        id: 8,
-        title: "Deep Ocean Secrets",
-        poster: "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?q=80&w=800&auto=format&fit=crop",
-        date: "10 May 2026",
-        timings: ["TBA"],
-        description: "A team of deep-sea explorers discovers a fascinating unknown species at the bottom of the Mariana Trench.",
-        whatsappNumber: "917253076678",
-        normalPrice: 140,
-        vipPrice: 320,
-        status: "coming_soon",
-        likes: 198
+        likes: 186
     }
 ];
 
@@ -352,5 +287,6 @@ if (heroSection) {
         heroSection.style.background = `url('${heroImages[currentHeroImageIndex]}') center/contain no-repeat #000`;
     }, 2500);
 }
+
 
 
