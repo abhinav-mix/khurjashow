@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Khurja Show - Khurja Movie Tickets & Cinema Booking</title>
+    <meta name="title" content="Khurja Show - Khurja Movie Tickets & Cinema Booking">
+    <meta name="description"
+        content="Welcome to Khurja Show! Book the latest movie tickets online for Khurja city. Browse now showing films, check timings, and book via WhatsApp instantly.">
+    <meta name="keywords"
+        content="Khurja Show, khurjashow, Khurja movies, khurjamovies, Khurja Movie Tickets, book movies khurja, khurja cinema, khurja theater, khurja online ticket booking, latest movies in khurja, movies near me khurja, khurja entertainment, pvr khurja, cinema hall khurja, up bulandshahr khurja movies, khurja show tickets, khurja show timings">
+    <meta name="author" content="Khurja Show">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e50914">
+
+    <!-- Open Graph / Facebook / WhatsApp (Shows preview when link shared) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://khurja-.netlify.app/"> <!-- Change to your netlify link later if needed -->
+    <meta property="og:title" content="Khurja Movie Tickets - Cinema in Your City">
+    <meta property="og:description"
+        content="Book latest blockbusters in Khurja instantly. Fast confirmation via WhatsApp. Reserve your seats now!">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Khurja Movie Tickets">
+    <meta property="twitter:description"
+        content="Book latest blockbusters in Khurja instantly. Fast confirmation via WhatsApp.">
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Canonical and Alternate Locales -->
+    <link rel="canonical" href="https://khurja-movies.netlify.app/">
+    <link rel="alternate" hreflang="en-in" href="https://khurja-movies.netlify.app/">
+    <link rel="alternate" hreflang="hi-in" href="https://khurja-movies.netlify.app/">
+    <link rel="alternate" hreflang="x-default" href="https://khurja-movies.netlify.app/">
+    <meta name="geo.region" content="IN-UP">
+    <meta name="geo.placename" content="Khurja">
+    <meta name="geo.position" content="28.2520;77.8499">
+    <meta name="ICBM" content="28.2520, 77.8499">
+
+    <!-- Structured Data (JSON-LD) for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EntertainmentBusiness",
+      "name": "Khurja Movie Tickets",
+      "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop",
+      "@id": "https://khurja-movies.netlify.app/",
+      "url": "https://khurja-movies.netlify.app/",
+      "telephone": "+917253076678",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Khurja City Center",
+        "addressLocality": "Khurja",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "203131",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.2520,
+        "longitude": 77.8499
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://khurja-movies.netlify.app/"
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="header" role="banner">
+        <!-- Hidden H1 for deep SEO crawl structure -->
+        <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+            Khurja Show - Khurja Movie Tickets Online Booking Platform
+        </h1>
+        <div class="container header-content">
+            <div class="logo" aria-label="Khurja Show Home"><span>Khurja Show</span> </div>
+            <nav class="nav" role="navigation" aria-label="Main Navigation">
+                <a href="#movies" title="Show Latest Movies in Khurja Center">Now Showing</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Welcome to Khurja Show Booking Portal">
+        <div class="hero-bg-overlay"></div>
+    </section>
+
+    <!-- Movies Grid Section -->
+    <section id="movies" class="movies-section">
+        <div class="container">
+            <h2 class="section-title">Now Showing</h2>
+            <div class="movie-grid" id="movie-grid">
+                <!-- Movie Cards will be inserted dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div
+                style="margin-bottom: 20px; padding: 25px; background: rgba(229, 9, 20, 0.05); border: 1px solid rgba(229, 9, 20, 0.2); border-radius: 8px; text-align: left; max-height: 400px; overflow-y: auto;">
+                <h4
+                    style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.3rem; text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">
+                    Terms, Conditions & Strict No-Return Policy</h4>
+
+                <p style="color: #d1d1d1; font-size: 0.95rem; line-height: 1.8; margin-bottom: 15px;">
+                    <strong>1. ALL SALES ARE STRICTLY FINAL AND NON-REFUNDABLE:</strong> By proceeding with the purchase
+                    of movie tickets on the Khurja Movie Tickets platform, you explicitly acknowledge, understand, and
+                    agree that your purchase is absolutely final. We enforce a zero-tolerance "No Return, No Refund, and
+                    No Exchange" policy under all circumstances. Once a transaction has been successfully processed,
+                    payment has been made, and a ticket has been issued to you, it cannot be revoked, modified, or
+                    canceled by either the user or the administration.
+                </p>
+
+                <p style="color: #d1d1d1; font-size: 0.95rem; line-height: 1.8; margin-bottom: 15px;">
+                    <strong>2. NO CANCELLATIONS OR BOOKING MODIFICATIONS:</strong> Users are solely and entirely
+                    responsible for ensuring the absolute accuracy of their booking details before finalizing the
+                    payment. This includes but is not limited to verifying the selected movie title, showtime, date,
+                    seat selection (if applicable), and the exact number of normal and VIP tickets. Khurja Movie Tickets
+                    does not entertain any requests for cancellations, downgrades, upgrades, or showtime alterations
+                    after the booking is confirmed. A confirmed booking is an irrevocable commitment on your part.
+                </p>
+
+                <p style="color: #d1d1d1; font-size: 0.95rem; line-height: 1.8; margin-bottom: 15px;">
+                    <strong>3. NO REFUNDS FOR MISSED SHOWS OR LATE ARRIVALS:</strong> If you fail to arrive at the
+                    cinema venue prior to the commencement of the scheduled show, or if you are denied entry due to late
+                    arrival in compliance with the cinema's strict operational rules, your ticket will be immediately
+                    forfeited without any eligibility for a refund, credit, or exchange. It is highly recommended and
+                    expected that all patrons arrive at the venue at least 30 to 45 minutes before the showtime to
+                    ensure smooth entry.
+                </p>
+
+                <p style="color: #d1d1d1; font-size: 0.95rem; line-height: 1.8; margin-bottom: 15px;">
+                    <strong>4. UNFORESEEN CIRCUMSTANCES AND CANCELLATIONS:</strong> In the extremely rare event of a
+                    technical failure, sudden power outage, natural disaster, severe weather conditions, or any other
+                    operational inability on the part of the cinema management that leads directly to the cancellation
+                    of a screening, the management reserves the exclusive and unquestionable right to decide the
+                    subsequent course of action. Any potential remedy, which remains at the absolute sole discretion of
+                    the management, will typically be provided strictly in the form of alternative show placements or
+                    future credits, and fundamentally EXCLUDES monetary cash refunds.
+                </p>
+
+                <p style="color: #d1d1d1; font-size: 0.95rem; line-height: 1.8; margin-bottom: 15px;">
+                    <strong>5. INDIVIDUAL ACCOUNTABILITY AND EMERGENCIES:</strong> The purchaser fully understands that
+                    the ticket is strictly valid only for the mutually agreed-upon date, specific time, and selected
+                    movie. Any personal emergencies, sudden changes in plans, accidental double bookings, illness,
+                    transportation issues, or misinterpretations of the movie's content, language, length, or rating
+                    completely fail to qualify for any form of a refund or exchange.
+                </p>
+
+                <p style="color: #d1d1d1; font-size: 0.95rem; line-height: 1.8;">
+                    <strong>6. ABSOLUTE ACCEPTANCE OF TERMS:</strong> In completing this transaction and checking the
+                    legally binding agreement box during the final checkout process, the buyer verifies under penalty of
+                    perjury that they have read, comprehensively understood, and unequivocally accepted the entirety of
+                    this Strict No-Return and No-Refund Policy. There are absolutely no exceptions, deviations, or
+                    special considerations made to this legally binding agreement.
+                </p>
+            </div>
+            <p>&copy; 2026 Khurja Movie Tickets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Form Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Book Your Ticket</h2>
+            <h3 id="modal-movie-title" class="modal-movie-title">Movie Name</h3>
+
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <!-- Accepting Indian 10 digit formats -->
+                    <input type="tel" id="mobile" required placeholder="10-digit mobile number" pattern="[0-9]{10}">
+                </div>
+
+
+
+                <div class="form-group">
+                    <label id="normal-ticket-label" for="normal-ticket-count">Normal Tickets</label>
+                    <input type="number" id="normal-ticket-count" required min="0" max="20" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label id="vip-ticket-label" for="vip-ticket-count">VIP Tickets</label>
+                    <input type="number" id="vip-ticket-count" required min="0" max="20" value="0">
+                </div>
+
+                <div class="total-price-container">
+                    <span>Total Price:</span>
+                    <span id="total-price">₹120</span>
+                </div>
+
+                <div class="terms-checkbox-group"
+                    style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 12px; padding: 15px; background: rgba(0,0,0,0.4); border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <input type="checkbox" id="accept-terms" required
+                        style="margin-top: 4px; width: 22px; height: 22px; accent-color: var(--primary-red); cursor: pointer; flex-shrink: 0;">
+                    <label for="accept-terms"
+                        style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; cursor: pointer; margin-bottom: 0; width: 100%;">
+                        I agree to the <strong style="color: var(--primary-red);">Terms & Conditions</strong>.
+
+                        <details style="margin-top: 10px; cursor: pointer; outline: none; width: 100%;">
+                            <summary
+                                style="color: #b3b3b3; font-size: 0.85rem; text-decoration: underline; outline: none; margin-bottom: 5px; list-style-position: inside;">
+                                View strict non-refundable ticket policy</summary>
+                            <div
+                                style="background: rgba(229, 9, 20, 0.1); border-left: 3px solid var(--primary-red); padding: 10px; border-radius: 4px; margin-top: 5px;">
+                                <strong
+                                    style="color: white; display: block; font-size: 0.95rem; letter-spacing: 0.5px; line-height: 1.4;">STRICTLY
+                                    NO RETURNS. ALL TICKET SALES ARE FINAL AND NON-REFUNDABLE UNDER ANY
+                                    CIRCUMSTANCES.</strong>
+                            </div>
+                        </details>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="script.js"></script>
+</body>
+
+</html>
