@@ -4,10 +4,10 @@ const movies = [
         id: 1,
         title: "Izzat - Dehati Movie Khurja",
         poster: "https://i.ibb.co/m5d6ZNfm/Whats-App-Image-2026-03-11-at-9-06-12-AM.jpg",
-        date: "12 Mar 2026",
-        timings: ["04:30 PM"],
+        date: "17 Mar 2026",
+        timings: ["03:00 PM"],
         description: "<strong>Director:</strong> Prashant<br><strong>Hero:</strong> Prashant | <strong>Heroine:</strong> Himani<br><strong>Cast:</strong> Sourya, Manish Solanki, Sobha, Gabbar, Khushi, Bhumika & others.<br><strong>Address:</strong> Khurja Cinema, Moon City",
-        whatsappNumber: "917253076671",
+        whatsappNumber: "918449802289",
         normalPrice: 120,
         vipPrice: 290,
         status: "now_showing", // Options: "now_showing" or "coming_soon"
@@ -352,4 +352,5 @@ if (heroSection) {
         heroSection.style.background = `url('${heroImages[currentHeroImageIndex]}') center/contain no-repeat #000`;
     }, 2500);
 }
+
 
