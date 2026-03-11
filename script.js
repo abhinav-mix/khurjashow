@@ -38,6 +38,15 @@ const movies = [
         vipPrice: 250,
         status: "coming_soon",
         likes: 186
+    },
+    {
+        id: 4,
+        title: "Official Promotion!",
+        poster: "https://i.ibb.co/fYYYsVnJ/Chat-GPT-Image-Mar-11-2026-04-03-08-PM.png",
+        description: "<strong>Exclusive Offer:</strong> Follow us on Instagram for the latest updates, movie giveaways, and special discounts! Join our growing community of cinema lovers.",
+        status: "promotion",
+        externalLink: "https://www.instagram.com/a7allgame/",
+        likes: 999
     }
 ];
 
@@ -81,22 +90,28 @@ function renderMovies() {
                         </svg>
                     </div>
                 </div>
+                ${movie.status === 'promotion'
+                ? `<div class="promotion-badge" style="background: #e91e63; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; width: fit-content; margin-bottom: 10px;">PROMOTION</div>`
+                : ''}
                 <div class="desc-toggle" onclick="toggleDescription(${movie.id})">
-                    <span class="desc-toggle-text">Storyline</span>
+                    <span class="desc-toggle-text">${movie.status === 'promotion' ? 'About Promotion' : 'Storyline'}</span>
                     <span class="desc-toggle-icon" id="desc-icon-${movie.id}">▼</span>
                 </div>
                 <div class="movie-description-wrapper" id="desc-wrapper-${movie.id}">
                     <p class="movie-description">${movie.description}</p>
                 </div>
-                ${movie.status === 'coming_soon' ? '<div style="flex-grow: 1; margin-bottom: 25px;"></div>' : `
+                ${movie.status === 'coming_soon' ? '<div style="flex-grow: 1; margin-bottom: 25px;"></div>' :
+                movie.status === 'promotion' ? '<div style="flex-grow: 1; margin-bottom: 15px;"></div>' : `
                 <div class="show-timings">
                     <span class="timing-tag">DATE: ${movie.date}</span>
                     <span class="timing-tag">TIME: ${movie.timings[0]}</span>
                 </div>`}
-                <!-- Pass exact ID to trigger modal correctly -->
-                ${movie.status === 'coming_soon'
-                ? `<button class="btn btn-disabled" disabled style="background-color: #333; color: #888; cursor: not-allowed; box-shadow: none;">Coming Soon</button>`
-                : `<button class="btn btn-primary" onclick="openBookingModal(${movie.id})">Book Ticket</button>`
+                <!-- Button Logic: Book, Coming Soon, or Continue (for Promotions) -->
+                ${movie.status === 'promotion'
+                ? `<button class="btn btn-primary" onclick="window.open('${movie.externalLink}', '_blank')" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border: none;">Continue</button>`
+                : movie.status === 'coming_soon'
+                    ? `<button class="btn btn-disabled" disabled style="background-color: #333; color: #888; cursor: not-allowed; box-shadow: none;">Coming Soon</button>`
+                    : `<button class="btn btn-primary" onclick="openBookingModal(${movie.id})">Book Ticket</button>`
             }
             </div>
         `;
@@ -121,14 +136,14 @@ window.toggleDescription = function (movieId) {
 // Handle Like Toggle Logic
 window.toggleLike = function (movieId) {
     const movieIndex = movies.findIndex(m => m.id === movieId);
-    if(movieIndex === -1) return;
+    if (movieIndex === -1) return;
 
     const heartIcon = document.getElementById(`heart-icon-${movieId}`);
-    
+
     // Check local storage for user's previous likes
     let userLikes = JSON.parse(localStorage.getItem('khurja_user_likes')) || {};
 
-    if(userLikes[movieId]) {
+    if (userLikes[movieId]) {
         // User already liked, so unlike it
         userLikes[movieId] = false;
         heartIcon.classList.remove('liked');
@@ -136,7 +151,7 @@ window.toggleLike = function (movieId) {
         // User hasn't liked, so like it
         userLikes[movieId] = true;
         heartIcon.classList.add('liked');
-        
+
         // Add a small pop animation
         heartIcon.style.transform = 'scale(1.3)';
         setTimeout(() => heartIcon.style.transform = '', 200);
@@ -149,9 +164,9 @@ window.toggleLike = function (movieId) {
 function applySavedLikes() {
     let userLikes = JSON.parse(localStorage.getItem('khurja_user_likes')) || {};
     movies.forEach(movie => {
-        if(userLikes[movie.id]) {
+        if (userLikes[movie.id]) {
             const heartIcon = document.getElementById(`heart-icon-${movie.id}`);
-            if(heartIcon) {
+            if (heartIcon) {
                 heartIcon.classList.add('liked');
             }
         }
@@ -268,10 +283,9 @@ const heroSection = document.querySelector('.hero');
 if (heroSection) {
     const heroImages = [
         "https://i.ibb.co/m5d6ZNfm/Whats-App-Image-2026-03-11-at-9-06-12-AM.jpg", // WhatsApp Promotio
-        "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop", // Cinema Hall
         "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2070&auto=format&fit=crop", // Movie Roll
         "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2070&auto=format&fit=crop", // Filming Action
-        "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=2070&auto=format&fit=crop"  // Cinema Spotlight
+
     ];
     let currentHeroImageIndex = 0;
 
@@ -287,6 +301,5 @@ if (heroSection) {
         heroSection.style.background = `url('${heroImages[currentHeroImageIndex]}') center/contain no-repeat #000`;
     }, 2500);
 }
-
 
 
