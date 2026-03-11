@@ -7,9 +7,10 @@ const movies = [
         date: "17 Mar 2026",
         timings: ["03:00 PM"],
         description: "<strong>Director:</strong> Prashant<br><strong>Hero:</strong> Prashant | <strong>Heroine:</strong> Himani<br><strong>Cast:</strong> Sourya, Manish Solanki, Sobha, Gabbar, Khushi, Bhumika & others.<br><strong>Address:</strong> Khurja Cinema, Moon City",
-        whatsappNumber: "918449802289",
-        normalPrice: 120,
-        vipPrice: 290,
+        whatsappNumber: "917617605850",
+        silverPrice: 120,
+        goldPrice: 190,
+        diamondPrice: 290,
         status: "now_showing", // Options: "now_showing" 
         likes: 245
     },
@@ -21,8 +22,9 @@ const movies = [
         timings: ["12:00 PM", "03:30 PM", "07:30 PM"],
         description: "<strong>Director:</strong> Kamakhya Narayan Singh<br><strong>Cast:</strong> Ulka Gupta, Aditi Bhatia, Aishwarya Ojha<br>The powerful sequel to the 2023 movie, following three young women across different states as they navigate complex emotional and societal challenges. A gripping narrative of resilience and survival.",
         whatsappNumber: "917253076672",
-        normalPrice: 150,
-        vipPrice: 350,
+        silverPrice: 120,
+        goldPrice: 190,
+        diamondPrice: 290,
         status: "coming_soon",
         likes: 245
     },
@@ -34,8 +36,9 @@ const movies = [
         timings: ["05:15 PM", "09:30 PM"],
         description: "<strong>Director:</strong> Karuna Kumar<br><strong>Cast:</strong> Naveen Chandra, Divya Pillai, Divi Vadthya<br>A gripping psychological horror thriller that explores the dark depths of the human mind. When a peaceful life is disrupted by unsettling events, survival becomes a game of psychological warfare.",
         whatsappNumber: "917253076673",
-        normalPrice: 100,
-        vipPrice: 250,
+        silverPrice: 120,
+        goldPrice: 190,
+        diamondPrice: 290,
         status: "coming_soon",
         likes: 186
     },
@@ -56,18 +59,21 @@ const modal = document.getElementById("booking-modal");
 const closeBtn = document.getElementById("close-btn");
 const bookingForm = document.getElementById("booking-form");
 const modalMovieTitle = document.getElementById("modal-movie-title");
-const normalTicketCountInput = document.getElementById("normal-ticket-count");
-const vipTicketCountInput = document.getElementById("vip-ticket-count");
-const normalTicketLabel = document.getElementById("normal-ticket-label");
-const vipTicketLabel = document.getElementById("vip-ticket-label");
+const silverTicketCountInput = document.getElementById("silver-ticket-count");
+const goldTicketCountInput = document.getElementById("gold-ticket-count");
+const diamondTicketCountInput = document.getElementById("diamond-ticket-count");
+const silverTicketLabel = document.getElementById("silver-ticket-label");
+const goldTicketLabel = document.getElementById("gold-ticket-label");
+const diamondTicketLabel = document.getElementById("diamond-ticket-label");
 const totalPriceEl = document.getElementById("total-price");
 
 let selectedMovieTitle = "";
 let selectedMovieDate = "";
 let selectedMovieTime = "";
 let selectedMovieWhatsapp = "";
-let selectedNormalPrice = 120;
-let selectedVipPrice = 290;
+let selectedSilverPrice = 120;
+let selectedGoldPrice = 190;
+let selectedDiamondPrice = 290;
 
 // 1. Initial Render of Movie Cards
 function renderMovies() {
@@ -182,13 +188,15 @@ window.openBookingModal = function (movieId) {
     selectedMovieDate = movie.date;
     selectedMovieTime = movie.timings[0];
     selectedMovieWhatsapp = movie.whatsappNumber;
-    selectedNormalPrice = movie.normalPrice;
-    selectedVipPrice = movie.vipPrice;
+    selectedSilverPrice = movie.silverPrice;
+    selectedGoldPrice = movie.goldPrice;
+    selectedDiamondPrice = movie.diamondPrice;
 
     // Update Modal Information
     modalMovieTitle.textContent = movie.title;
-    normalTicketLabel.textContent = `Normal Tickets (₹${movie.normalPrice})`;
-    vipTicketLabel.textContent = `VIP Tickets (₹${movie.vipPrice})`;
+    silverTicketLabel.textContent = `Silver Tickets (₹${movie.silverPrice})`;
+    goldTicketLabel.textContent = `Gold Tickets (₹${movie.goldPrice})`;
+    diamondTicketLabel.textContent = `Diamond Tickets (₹${movie.diamondPrice})`;
 
     // Reset Form Fields state and recalculate price
     bookingForm.reset();
@@ -222,16 +230,18 @@ window.addEventListener("keydown", (e) => {
 
 // 4. Update Total Price dynamically
 function updateTotalPrice() {
-    const normalCount = parseInt(normalTicketCountInput.value) || 0;
-    const vipCount = parseInt(vipTicketCountInput.value) || 0;
+    const silverCount = parseInt(silverTicketCountInput.value) || 0;
+    const goldCount = parseInt(goldTicketCountInput.value) || 0;
+    const diamondCount = parseInt(diamondTicketCountInput.value) || 0;
 
-    const total = (normalCount * selectedNormalPrice) + (vipCount * selectedVipPrice);
+    const total = (silverCount * selectedSilverPrice) + (goldCount * selectedGoldPrice) + (diamondCount * selectedDiamondPrice);
     totalPriceEl.textContent = `₹${total}`;
 }
 
 // Listen to changes in selections
-normalTicketCountInput.addEventListener("input", updateTotalPrice);
-vipTicketCountInput.addEventListener("input", updateTotalPrice);
+silverTicketCountInput.addEventListener("input", updateTotalPrice);
+goldTicketCountInput.addEventListener("input", updateTotalPrice);
+diamondTicketCountInput.addEventListener("input", updateTotalPrice);
 
 // 5. Handle Booking Submission & WhatsApp Redirect
 bookingForm.addEventListener("submit", function (e) {
@@ -241,15 +251,16 @@ bookingForm.addEventListener("submit", function (e) {
     const name = document.getElementById("name").value.trim();
     const mobile = document.getElementById("mobile").value.trim();
 
-    const normalCount = parseInt(normalTicketCountInput.value) || 0;
-    const vipCount = parseInt(vipTicketCountInput.value) || 0;
+    const silverCount = parseInt(silverTicketCountInput.value) || 0;
+    const goldCount = parseInt(goldTicketCountInput.value) || 0;
+    const diamondCount = parseInt(diamondTicketCountInput.value) || 0;
 
-    if (normalCount === 0 && vipCount === 0) {
+    if (silverCount === 0 && goldCount === 0 && diamondCount === 0) {
         alert("Please select at least one ticket to proceed.");
         return;
     }
 
-    const totalRaw = (normalCount * selectedNormalPrice) + (vipCount * selectedVipPrice);
+    const totalRaw = (silverCount * selectedSilverPrice) + (goldCount * selectedGoldPrice) + (diamondCount * selectedDiamondPrice);
 
     // 2. Formulate Message exactly as requested
     const message = `Hello, I want to book movie tickets.
@@ -259,8 +270,9 @@ Mobile: ${mobile}
 Movie: ${selectedMovieTitle}
 Date: ${selectedMovieDate}
 Time: ${selectedMovieTime}
-Normal Tickets: ${normalCount} x ₹${selectedNormalPrice}
-VIP Tickets: ${vipCount} x ₹${selectedVipPrice}
+Silver Tickets: ${silverCount} x ₹${selectedSilverPrice}
+Gold Tickets: ${goldCount} x ₹${selectedGoldPrice}
+Diamond Tickets: ${diamondCount} x ₹${selectedDiamondPrice}
 Total Price: ₹${totalRaw}`;
 
     // 3. Encode for URL format
